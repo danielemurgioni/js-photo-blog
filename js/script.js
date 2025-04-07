@@ -21,7 +21,7 @@ const createPhotoCard = (photo) => {
     const {title, date, url} = photo;
     
     //scrittura in html e uso i dati dall'API
-    const photoCard = `<div class="col-12 mt-5">
+    const photoCard = `<div class="col-12 col-md-6 col-lg-4 mt-5">
                     <div id="photo-card" class="container position-relative">
                         <img id="pin" class="position-absolute" src="./img/pin.svg">
                         <img id="photo" class="img-fluid" src="${url}">
