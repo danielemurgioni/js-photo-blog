@@ -1,0 +1,22 @@
+header{
+    background-image: url(../img/wall.png);
+}
+
+main{
+    background-image: url(../img/cork.png);
+    padding: 40px 0px;
+}
+
+.font-size{
+    font-size: 100px;
+}
+
+#photo-card{
+    background-color: white;
+    padding: 20px;
+}
+
+#pin{
+    top: -10px;
+    right: 46%;
+}
