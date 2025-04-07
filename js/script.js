@@ -1,14 +1,17 @@
+//prendo gli elementi dal DOM
+const photoBox = document.getElementById("photo-box");
+
 axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
 
     // prendo i dati dell'API
     const photoInfo = resp.data
-    console.log(photoInfo)
+    console.log(photoInfo);
 
     // ciclo gli oggetti
     for(let i=0; i<photoInfo.length; i++){
-        const photoCard = createPhotoCard(photoInfo[i])
-        console.log(photoCard)
-    }
+        const photoCard = createPhotoCard(photoInfo[i]);
+        renderIntoDOM(photoCard, photoBox);
+    };
 });
 
 //funzione per creare la struttura html delle photo-card
@@ -27,4 +30,9 @@ const createPhotoCard = (photo) => {
                     </div>
                 </div>`;
     return photoCard;
+};
+
+//funzione per inserire nel DOM
+const renderIntoDOM = (element, where) =>{
+    where.innerHTML += element;
 };
