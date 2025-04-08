@@ -1,9 +1,12 @@
 //prendo gli elementi dal DOM
 const photoBox = document.getElementById("photo-box");
 const overlay = document.getElementById("overlay");
+const overlayBtn = document.getElementById("btn-overlay");
+const overlayPhoto = document.getElementById("photo-overlay");
+
 console.log(overlay);
-const overlayBtn = document.getElementById("btn-overlay")
-console.log(overlayBtn)
+console.log(overlayBtn);
+console.log(overlayPhoto);
 
 // foto dell'album
 axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
@@ -22,10 +25,12 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
     const photoPic = document.querySelectorAll("#photo-card");
     console.log(photoPic);
 
-    photoPic.forEach((item) => {
+    photoPic.forEach((item, id) => {
         //quando clicco sulla foto apre l'overlay
         item.addEventListener("click", ()=>{
             overlay.classList.remove("d-none");
+            //cambio il source dell'immagine
+            overlayPhoto.src = `${photoInfo[id].url}`
         });
     });
 });
