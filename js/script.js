@@ -1,8 +1,13 @@
 //prendo gli elementi dal DOM
 const photoBox = document.getElementById("photo-box");
+const overlay = document.getElementById("overlay");
+console.log(overlay);
+const overlayBtn = document.getElementById("btn-overlay")
+console.log(overlayBtn)
 
+// foto dell'album
 axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
-
+    
     // prendo i dati dell'API
     const photoInfo = resp.data
     console.log(photoInfo);
@@ -12,6 +17,20 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
         const photoCard = createPhotoCard(photoInfo[i]);
         renderIntoDOM(photoCard, photoBox);
     };
+
+    //prendo l'elemento del DOM dentro alla chiamata per via dell'asincronicità
+    const photoPic = document.getElementById("photo-card");
+    console.log(photoPic);
+
+    //quando clicco sulla foto apre l'overlay
+    photoPic.addEventListener("click", ()=>{
+        overlay.classList.remove("d-none");
+    });
+});
+
+//bottone che chiude l'overlay
+overlayBtn.addEventListener("click", ()=>{
+    overlay.classList.add("d-none");
 });
 
 //funzione per creare la struttura html delle photo-card
