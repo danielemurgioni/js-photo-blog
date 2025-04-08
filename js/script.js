@@ -19,12 +19,14 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
     };
 
     //prendo l'elemento del DOM dentro alla chiamata per via dell'asincronicità
-    const photoPic = document.getElementById("photo-card");
+    const photoPic = document.querySelectorAll("#photo-card");
     console.log(photoPic);
 
-    //quando clicco sulla foto apre l'overlay
-    photoPic.addEventListener("click", ()=>{
-        overlay.classList.remove("d-none");
+    photoPic.forEach((item) => {
+        //quando clicco sulla foto apre l'overlay
+        item.addEventListener("click", ()=>{
+            overlay.classList.remove("d-none");
+        });
     });
 });
 
