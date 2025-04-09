@@ -7,7 +7,7 @@ main{
     padding: 40px 0px;
 }
 
-h1, #title{
+h1, .title{
     font-family: "Edu Tas Beginner", "sans-serif";
     text-transform: uppercase;
 }
@@ -17,22 +17,22 @@ header>h1{
     font-weight: 800;
 }
 
-#title{
+.title{
     font-size: 40px;
     font-weight: 700;
 }
 
-#date{
+.date{
     font-family: "Sometype Mono", "monospace";
     color: grey;
 }
 
-#photo-card{
+.photo-card{
     background-color: white;
     padding: 20px;
 }
 
-#pin{
+.pin{
     top: -10px;
     right: 50%;
     transform: translate(50%, 0);

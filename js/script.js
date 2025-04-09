@@ -48,11 +48,11 @@ const createPhotoCard = (photo) => {
     
     //scrittura in html e uso i dati dall'API
     const photoCard = `<div class="col-12 col-md-6 col-lg-4 mt-5">
-                    <div id="photo-card" class="container position-relative">
-                        <img id="pin" class="position-absolute" src="./img/pin.svg">
-                        <img id="photo" class="img-fluid" src="${url}">
-                        <h2 id="date" class="mt-4 text-end">${date}</h2>
-                        <h2 id="title" class="mt-4 text-end">${title}</h2>
+                    <div class="container position-relative photo-card">
+                        <img class="position-absolute pin" src="./img/pin.svg">
+                        <img class="img-fluid photo" src="${url}">
+                        <h2 class="mt-4 text-end date">${date}</h2>
+                        <h2 class="mt-4 text-end title">${title}</h2>
                     </div>
                 </div>`;
                 
