@@ -22,7 +22,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
     };
 
     //prendo l'elemento del DOM dentro alla chiamata per via dell'asincronicità
-    const photoPic = document.querySelectorAll("#photo-card");
+    const photoPic = document.querySelectorAll(".photo-card");
     console.log(photoPic);
 
     photoPic.forEach((item, id) => {
